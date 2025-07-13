@@ -27,7 +27,7 @@ jobs:
       - name: Publish to Exchange
         run: |
           mvn clean package mule:deploy -DskipExchangePackage=true --settings .maven/settings.xml \
-          mvn deploy --settings .maven/settings.xml -DskipMunitTests \
+          -DskipMunitTests=true \
           -Dclient.id="${{ secrets.CONNECTED_CLIENT_ID }}" \
           -Dclient.secret="${{ secrets.CONNECTED_CLIENT_SECRET }}"
       - name: Deploy to CloudHub 2.0
