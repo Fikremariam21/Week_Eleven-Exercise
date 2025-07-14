@@ -26,7 +26,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-application</classifier>
-					<cloudhub2Deployment>
+					<cloudhub2>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<provider>MC</provider>
 						<environment>Sandbox</environment>
@@ -40,7 +40,7 @@
 						<deploymentSettings>
 							<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
 						</deploymentSettings>
-					</cloudhub2Deployment>
+					</cloudhub2>
 				</configuration>
 			</plugin>
 		</plugins>
