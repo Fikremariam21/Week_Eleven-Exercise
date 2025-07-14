@@ -36,6 +36,7 @@
         <extensions>true</extensions>
         <configuration>
           <classifier>mule-application</classifier>
+         <deployments> 
           <cloudHub2Deployment>
             <uri>https://anypoint.mulesoft.com</uri>
             <provider>MC</provider>
@@ -53,6 +54,7 @@
             <clientId>${anypoint.client_id}</clientId>
             <clientSecret>${anypoint.client_secret}</clientSecret>
           </cloudHub2Deployment>
+         </deployments>
         </configuration>
       </plugin>
     </plugins>
