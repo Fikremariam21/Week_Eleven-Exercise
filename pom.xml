@@ -7,7 +7,7 @@
 
   <groupId>638c11e8-0892-492c-aa45-a7ea1e397aa5</groupId>
   <artifactId>weekeleven_exercise</artifactId>
-  <version>1.0.8</version>
+  <version>1.0.9</version>
   <packaging>mule-application</packaging>
 
   <name>Week Eleven Exercise</name>
