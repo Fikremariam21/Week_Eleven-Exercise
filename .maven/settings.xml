@@ -2,12 +2,11 @@
   <pluginGroups>
     <pluginGroup>org.mule.tools</pluginGroup>
   </pluginGroups>
-
-  <servers>
-    <server>
-      <id>Repository</id>
-      <username>${anypoint.client_id}</username>
-      <password>${anypoint.client_secret}</password>
-    </server>
-  </servers>
+ <servers>
+  <server>
+   <id>Repository</id>
+   <username>~~~Client~~~</username>
+   <password>${client_id}~?~${client_secret}</password>
+  </server>
+ </servers>
 </settings>
