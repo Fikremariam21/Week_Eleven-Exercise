@@ -26,7 +26,7 @@ jobs:
 
       - name: Publish to Exchange
         run: |
-         mvn deploy --settings .maven/settings.xml -DskipMunitTests \
+         mvn deploy -X -e --settings .maven/settings.xml -DskipMunitTests \
           -Dclient_id="${{ secrets.CONNECTED_CLIENT_ID }}" \
           -Dclient_secret="${{ secrets.CONNECTED_CLIENT_SECRET }}"
 
