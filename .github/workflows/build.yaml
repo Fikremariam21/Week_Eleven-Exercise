@@ -32,7 +32,7 @@ jobs:
           -Dclient_id="${{ secrets.CONNECTED_CLIENT_ID }}" \
           -Dclient_secret="${{ secrets.CONNECTED_CLIENT_SECRET }}"
 
-      - name: Debug Deploy to CloudHub 2.0
+      - name: Deploy to CloudHub 2.0
         run: |
           mvn deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy \
           -Dclient_id="${{ secrets.CONNECTED_CLIENT_ID }}" \
