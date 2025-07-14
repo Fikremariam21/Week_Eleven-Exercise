@@ -41,7 +41,7 @@
             <provider>MC</provider>
             <environment>Sandbox</environment>
             <target>CloudHub2</target>
-            <regionId>Cloudhub-US-East-2</regionId>
+            <regionId>us-east-2</regionId>
             <applicationName>${project.artifactId}</applicationName>
             <releaseChannel>Edge</releaseChannel>
             <muleVersion>${mule.runtime.version}</muleVersion>
