@@ -7,7 +7,7 @@
 
   <groupId>638c11e8-0892-492c-aa45-a7ea1e397aa5</groupId>
   <artifactId>weekeleven_exercise</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <packaging>mule-application</packaging>
 
   <name>Week Eleven Exercise</name>
@@ -57,8 +57,8 @@
               <deploymentSettings>
                 <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
               </deploymentSettings>
-              <clientId>${anypoint.client_id}</clientId>
-              <clientSecret>${anypoint.client_secret}</clientSecret>
+              <clientId>${anypoint.client.id}</clientId>
+              <clientSecret>${anypoint.client.secret}</clientSecret>
             </cloudHub2Deployment>
         </configuration>
       </plugin>
