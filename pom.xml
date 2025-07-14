@@ -25,30 +25,25 @@
 
   <build>
     <plugins>
+	   <plugin>
+		   <groupId>org.apache.maven.plugins</groupId>
+		   <artifactId>maven-clean-plugin</artifactId>
+		   <version>3.2.0</version>
+	  </plugin>
       <plugin>
         <groupId>org.mule.tools.maven</groupId>
         <artifactId>mule-maven-plugin</artifactId>
         <version>${mule.maven.plugin.version}</version>
         <extensions>true</extensions>
         
-        <executions>
-          <execution>
-            <id>deploy-to-cloudhub2</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>deploy</goal>
-            </goals>
-          </execution>
-        </executions>
-
         <configuration>
           <classifier>mule-application</classifier>
-            <cloudHub2Deployment>
+            <cloudhub2Deployment>
               <uri>https://anypoint.mulesoft.com</uri>
               <provider>MC</provider>
               <environment>Sandbox</environment>
-              <target>CloudHub2</target>
-              <regionId>Cloudhub-US-East-2</regionId>
+              <target>Cloudhub-US-East-2</target>
+              <server>Repository</server>
               <applicationName>${project.artifactId}</applicationName>
               <releaseChannel>Edge</releaseChannel>
               <muleVersion>4.9.6</muleVersion>
@@ -57,9 +52,8 @@
               <deploymentSettings>
                 <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
               </deploymentSettings>
-              <clientId>${anypoint.client.id}</clientId>
-              <clientSecret>${anypoint.client.secret}</clientSecret>
-            </cloudHub2Deployment>
+               
+            </cloudhub2Deployment>
         </configuration>
       </plugin>
     </plugins>
@@ -88,33 +82,35 @@
     </repository>
     <repository>
       <id>mulesoft-releases</id>
-      <name>MuleSoft Releases</name>
+      <name>MuleSoft Releases Repository</name>
       <url>https://repository.mulesoft.org/releases/</url>
+      <layout>default</layout>
     </repository>
     <repository>
       <id>Repository</id>
-      <name>Private Exchange Repository</name>
-      <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/638c11e8-0892-492c-aa45-a7ea1e397aa5/maven</url>
+      <name>Private Exchange repository</name>
+	  <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+	  <layout>default</layout>
     </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
       <id>mulesoft-releases</id>
-      <name>MuleSoft Plugin Releases</name>
+      <name>MuleSoft Releases Repository</name>
+      <layout>default</layout>
       <url>https://repository.mulesoft.org/releases/</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
-
   <distributionManagement>
     <repository>
       <id>Repository</id>
-      <name>Corporate Exchange Repository</name>
-      <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/638c11e8-0892-492c-aa45-a7ea1e397aa5/maven</url>
+      <name>Corporate Repository</name>
+	  <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+	  <layout>default</layout>
     </repository>
   </distributionManagement>
-
 </project>
