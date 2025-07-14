@@ -1,19 +1,17 @@
 <?xml version="1.0"?>
+
 <settings>
-
-    <pluginGroups>
-        <pluginGroup>org.mule.tools</pluginGroup>
-    </pluginGroups>
-
-    <servers>
-        <server>
-            <id>Repository</id>
-            <username>${CONNECTED_CLIENT_ID}</username>
-            <password>${CONNECTED_CLIENT_SECRET}</password>
-        </server>
-    </servers>
-
-    </settings>
+   <pluginGroups>
+      <pluginGroup>org.mule.tools</pluginGroup>
+   </pluginGroups>
+ <servers>
+   <server>
+      <id>Repository</id>
+      <username>~~~Client~~~</username>
+      <password>${client.id}~?~${client.secret}</password>
+   </server>
+ </servers>
+</settings>
 	
 	
 	
