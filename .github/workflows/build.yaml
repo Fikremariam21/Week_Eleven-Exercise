@@ -3,7 +3,7 @@ name: Publish to Exchange & Deploy to CH2.0
 on:
   push:
     branches: [ main ]
-    
+
 jobs:         
   build:
     runs-on: ubuntu-latest
@@ -23,15 +23,16 @@ jobs:
         with:
           distribution: "zulu"
           java-version: 17
-      
+
       - name: Publish to Exchange
         run: |
-          mvn clean package mule:deploy -DskipExchangePackage=true --settings .maven/settings.xml \
+          mvn clean package mule:deploy --settings .maven/settings.xml \
           -DskipMunitTests=true \
-          -Dclient.id="${{ secrets.CONNECTED_CLIENT_ID }}" \
-          -Dclient.secret="${{ secrets.CONNECTED_CLIENT_SECRET }}"
+          -Danypoint.client_id="${{ secrets.CONNECTED_CLIENT_ID }}" \
+          -Danypoint.client_secret="${{ secrets.CONNECTED_CLIENT_SECRET }}"
+
       - name: Deploy to CloudHub 2.0
         run: |
-          mvn deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy \
-          -Dclient.id="${{ secrets.CONNECTED_CLIENT_ID }}" \
-          -Dclient.secret="${{ secrets.CONNECTED_CLIENT_SECRET }}" 
+          mvn deploy --settings .maven/settings.xml -DskipMunitTests=true \
+          -Danypoint.client_id="${{ secrets.CONNECTED_CLIENT_ID }}" \
+          -Danypoint.client_secret="${{ secrets.CONNECTED_CLIENT_SECRET }}"
