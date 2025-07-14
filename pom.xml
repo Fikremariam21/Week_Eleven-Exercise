@@ -5,7 +5,6 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- Organization ID (Anypoint) -->
   <groupId>638c11e8-0892-492c-aa45-a7ea1e397aa5</groupId>
   <artifactId>weekeleven_exercise</artifactId>
   <version>1.0.1</version>
@@ -22,9 +21,6 @@
     <java.version>17</java.version>
     <mule.maven.plugin.version>4.4.0</mule.maven.plugin.version>
 
-    <!-- Optional Exchange metadata -->
-    <exchange.categories>training,practice</exchange.categories>
-    <exchange.tags>week11,cloudhub2,exchange</exchange.tags>
   </properties>
 
   <build>
@@ -34,27 +30,38 @@
         <artifactId>mule-maven-plugin</artifactId>
         <version>${mule.maven.plugin.version}</version>
         <extensions>true</extensions>
+        
+        <executions>
+          <execution>
+            <id>deploy-to-cloudhub2</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+          </execution>
+        </executions>
+
         <configuration>
           <classifier>mule-application</classifier>
-         <deployments> 
-          <cloudHub2Deployment>
-            <uri>https://anypoint.mulesoft.com</uri>
-            <provider>MC</provider>
-            <environment>Sandbox</environment>
-            <target>CloudHub2</target>
-            <regionId>us-east-2</regionId>
-            <applicationName>${project.artifactId}</applicationName>
-            <releaseChannel>Edge</releaseChannel>
-            <muleVersion>${mule.runtime.version}</muleVersion>
-            <replicas>1</replicas>
-            <vCores>0.1</vCores>
-            <deploymentSettings>
-              <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
-            </deploymentSettings>
-            <clientId>${anypoint.client_id}</clientId>
-            <clientSecret>${anypoint.client_secret}</clientSecret>
-          </cloudHub2Deployment>
-         </deployments>
+          <deployments>
+            <cloudHub2Deployment>
+              <uri>https://anypoint.mulesoft.com</uri>
+              <provider>MC</provider>
+              <environment>Sandbox</environment>
+              <target>CloudHub2</target>
+              <regionId>us-east-2</regionId>
+              <applicationName>${project.artifactId}</applicationName>
+              <releaseChannel>Edge</releaseChannel>
+              <muleVersion>${mule.runtime.version}</muleVersion>
+              <replicas>1</replicas>
+              <vCores>0.1</vCores>
+              <deploymentSettings>
+                <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+              </deploymentSettings>
+              <clientId>${anypoint.client_id}</clientId>
+              <clientSecret>${anypoint.client_secret}</clientSecret>
+            </cloudHub2Deployment>
+          </deployments>
         </configuration>
       </plugin>
     </plugins>
