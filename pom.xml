@@ -43,13 +43,12 @@
 
         <configuration>
           <classifier>mule-application</classifier>
-          <deployments>
             <cloudHub2Deployment>
               <uri>https://anypoint.mulesoft.com</uri>
               <provider>MC</provider>
               <environment>Sandbox</environment>
               <target>CloudHub2</target>
-              <regionId>us-east-2</regionId>
+              <regionId>Cloudhub-US-East-2</regionId>
               <applicationName>${project.artifactId}</applicationName>
               <releaseChannel>Edge</releaseChannel>
               <muleVersion>${mule.runtime.version}</muleVersion>
@@ -61,7 +60,6 @@
               <clientId>${anypoint.client_id}</clientId>
               <clientSecret>${anypoint.client_secret}</clientSecret>
             </cloudHub2Deployment>
-          </deployments>
         </configuration>
       </plugin>
     </plugins>
@@ -96,7 +94,7 @@
     <repository>
       <id>Repository</id>
       <name>Private Exchange Repository</name>
-      <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+      <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/638c11e8-0892-492c-aa45-a7ea1e397aa5/maven</url>
     </repository>
   </repositories>
 
@@ -115,7 +113,7 @@
     <repository>
       <id>Repository</id>
       <name>Corporate Exchange Repository</name>
-      <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+      <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/638c11e8-0892-492c-aa45-a7ea1e397aa5/maven</url>
     </repository>
   </distributionManagement>
 
