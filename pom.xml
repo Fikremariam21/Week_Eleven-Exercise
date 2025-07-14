@@ -51,7 +51,7 @@
               <regionId>Cloudhub-US-East-2</regionId>
               <applicationName>${project.artifactId}</applicationName>
               <releaseChannel>Edge</releaseChannel>
-              <muleVersion>${mule.runtime.version}</muleVersion>
+              <muleVersion>4.9.6</muleVersion>
               <replicas>1</replicas>
               <vCores>0.1</vCores>
               <deploymentSettings>
