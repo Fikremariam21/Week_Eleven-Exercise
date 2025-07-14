@@ -35,10 +35,9 @@
 						<applicationName>${project.artifactId}</applicationName>
 						<releaseChannel>Edge</releaseChannel>
 						<muleVersion>4.8.1</muleVersion>
-						<replicas>1</replicas>
-						<vCores>0.1</vCores>
+						 
 						<deploymentSettings>
-							<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+							<cpuCores>0.1</cpuCores> <memory>0.5</memory>    <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
 						</deploymentSettings>
 					</cloudhub2>
 				</configuration>
