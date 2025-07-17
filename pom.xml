@@ -7,7 +7,7 @@
 
   <groupId>638c11e8-0892-492c-aa45-a7ea1e397aa5</groupId>
   <artifactId>weekeleven_exercise</artifactId>
-  <version>1.2.0</version>
+  <version>1.2.1</version>
   <packaging>mule-application</packaging>
 
   <name>Week Eleven Exercise</name>
@@ -17,7 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <mule.runtime.version>4.9.7</mule.runtime.version>
+    <mule.runtime.version>4.8.1</mule.runtime.version>
     <mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
   </properties>
 
@@ -44,7 +44,7 @@
               <server>Repository</server>
               <applicationName>${project.artifactId}</applicationName>
               <releaseChannel>Edge</releaseChannel>
-              <muleVersion>4.9.7</muleVersion>
+              <muleVersion>4.8.1</muleVersion>
               <replicas>1</replicas>
               <vCores>0.1</vCores>
               <deploymentSettings>
